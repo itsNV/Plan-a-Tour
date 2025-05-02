@@ -3,7 +3,7 @@ import Card from "./Card.js";
 
 function Tours({ tours ,removeTour}) {
   return (
-    <div className="container flex flex-wrap justify-center ">
+    <div className="container flex flex-wrap justify-center mx-auto">
 
       <h2 className="heading">Plan With Me</h2>
 
