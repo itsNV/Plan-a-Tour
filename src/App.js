@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import data from "./data.js";
 import Tours from "./components/Tours.js";
 import { AnimatedBackground } from "animated-backgrounds";
-import BlockImage from "react-block-image";
+
 
 const App = () => {
   const [tours, setTours] = useState(data);
@@ -29,7 +29,7 @@ const App = () => {
   return (
     <div className="bg-transparent text-white">
       <AnimatedBackground animationName="particleNetwork" blendMode="difference" />
-      {/* <BlockImage src="https://cdn.thecodehelp.in/Jaipur.jpeg" /> */}
+      
       <Tours tours={tours} removeTour={removeTour} />
     </div>
   );
