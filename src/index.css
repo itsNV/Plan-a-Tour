@@ -1,10 +1,8 @@
 /* write your css here */
 
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
 
 *{
     margin: 0;
@@ -15,6 +13,22 @@
 body{
     height: 100vh;
     width: 100vw;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
 
 .container{
@@ -22,74 +36,105 @@ body{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    padding: 2rem;
 }
 
 .heading{
-    /* align-items: center; */
-    font-size: 3rem;
-    margin:3vh;
-    border: 7px dashed rgb(1,17,160);
-    border-radius: 20px;
-    padding:1vh 5vw;
-    width: auto 10px;
+    font-size: 2.5rem;
+    margin: 2rem 0;
+    color: #ffffff;
+    text-align: center;
+    padding:1rem 2rem;
+    border: 5px dashed #ffffff;
+    border-radius: 15px;
+    background-color: rgba(0,0,0,0.1);
 }
 
 .cards{
     display: flex;
-    /* align-items: center; */
     justify-content: center;
     flex-wrap: wrap;
     max-width: 1300px;
     margin:0 auto;
-    
 }
 
 .card{
-    width:400px;
-    height:max-content;
+    width:350px;
+    background-color: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     margin:1rem;
-    padding:1rem;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    border-radius: 10px;
-    
-    box-shadow: rgba(193, 149, 255, 0.24) 0px 3px 8px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.25);
+}
+
+.card-content-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .image{
-    width:380px;
-    aspect-ratio: 1/1;
+    width:100%;
+    height: 200px;
     object-fit: cover;
 }
 
 .tour-details{
-    margin-top: 10px;
-    font-size:1.3rem;
+    font-size:1.0rem;
+    color: #f0f0f0;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
 }
 
 .tour-name{
-    font-size:1.5rem;
+    font-size:1.3rem;
+    font-weight: 700;
+    color: #ffffff;
+    text-shadow: 0px 0px 6px rgba(0, 0, 0, 0.35);
+    margin-bottom: 0.75rem;
+    margin-top: 0.5rem;
 }
 
 .tour-info{
-    margin:20px 5px;
+    margin:10px 0px;
+    color: #f0f0f0;
+    text-shadow: 0px 0px 4px rgba(0, 0, 0, 0.3);
+    line-height: 1.5;
+    font-size: 0.8rem;
+    flex-grow: 1;
 }
 
 .card-btn{
-    margin-top:18px;
-    padding: 10px 80px;
-    border: 1px solid #b4161b;
+    margin-top: auto;
+    padding: 10px 20px;
+    border: none;
     cursor: pointer;
     border-radius:10px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #b4161b21;
+    font-size: 0.9rem;
+    font-weight: 600;
+    background-image: linear-gradient(to right, #e73c7e, #ee7752);
+    background-size: 200% auto;
+    color: white;
+    align-self: stretch;
+    text-align: center;
+    transition: background-position 0.4s ease, transform 0.2s ease;
 }
 
 .card-btn:hover{
-    background-color: red;
-    color:white;
-    transition: all 0.2s;
+    background-position: right center;
+    transform: scale(1.03);
 }
 
 .refresh{
@@ -97,26 +142,118 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    
     flex-direction: column;
+    color: white;
+}
 
+.refresh h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
 }
 
 .refresh-btn{
     margin-top:18px;
-    padding:10px 80px;
-    border: 1px solid white;
+    padding:12px 30px;
+    border: 2px solid white;
     cursor: pointer;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: transparent;
+    color: white;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .refresh-btn:hover{
     background-color: white;
-    color: white;
-    transition: all 0.2s;
+    color: #23a6d5;
 }
 
 .readmoreless{
     cursor: pointer;
+    color: #23a6d5;
+    font-weight: bold;
+}
+
+/* Importing Poppins font - Add this to your HTML or a global CSS import if preferred */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .cards {
+        max-width: 900px; /* Adjust max-width for slightly smaller screens */
+    }
+    .card {
+        width: 300px; /* Adjust card width */
+    }
+}
+
+@media (max-width: 992px) {
+    .heading {
+        font-size: 2rem; /* Decrease heading font size */
+        padding: 0.8rem 1.5rem;
+    }
+    .cards {
+        max-width: 700px;
+    }
+    .card {
+        width: 320px; /* Allow cards to be a bit wider if only two per row */
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem; /* Reduce container padding */
+    }
+    .heading {
+        font-size: 1.8rem;
+        margin: 1.5rem 0;
+        border-width: 4px;
+    }
+    .cards {
+        flex-direction: column; /* Stack cards vertically */
+        align-items: center; /* Center cards when stacked */
+        max-width: 100%;
+    }
+    .card {
+        width: 90%; /* Make cards wider to take up more space */
+        max-width: 400px; /* But cap their max width */
+        margin: 1rem 0; /* Adjust margin for vertical stacking */
+    }
+    .image {
+        max-width: 100%; /* Allow image to fill card width if needed */
+    }
+    .card-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    .refresh h2 {
+        font-size: 1.5rem;
+    }
+    .refresh-btn {
+        padding: 10px 25px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        /* Potentially adjust background animation or simplify for very small devices if performance is an issue */
+    }
+    .heading {
+        font-size: 1.5rem;
+        padding: 0.6rem 1rem;
+    }
+    .tour-name {
+        font-size: 1.2rem;
+    }
+    .tour-details {
+        font-size: 1rem;
+    }
+    .card-btn{
+        width: 80%;
+        text-align: center;
+    }
 }
 
 
